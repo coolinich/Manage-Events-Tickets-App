@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Really cool event",
+    "type": "Different",
+    "location": "Tallinn Central Library",
+    "date": "2021-09-24T21:00:00.000Z",
+    "description": "You can find and read any book you want!",
+    "capacity": 200,
+    "id": "a1ef98defff746e8",
+    "tickets": [
+        {
+            "eventRef": "a1ef98defff746e8",
+            "validationCode": "1",
+            "status": "sold",
+            "id": "b0c45af885673798"
+        },
+        {
+            "eventRef": "a1ef98defff746e8",
+            "validationCode": "2",
+            "status": "validated",
+            "id": "8023c96aca472426"
+        }
+    ]
+  }
+]
