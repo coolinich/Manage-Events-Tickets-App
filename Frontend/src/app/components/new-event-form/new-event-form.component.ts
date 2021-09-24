@@ -39,7 +39,6 @@ export class NewEventFormComponent implements OnInit {
 
   onSubmit(formDirective: FormGroupDirective) {
     const newEventFormData = this.prepareFormData();
-    console.log(newEventFormData);
     this.eventsService
       .createNewEvent(newEventFormData)
       .pipe(takeUntil(this.activeFormSubject$))

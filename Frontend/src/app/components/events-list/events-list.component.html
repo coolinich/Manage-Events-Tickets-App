@@ -9,8 +9,10 @@
         <button mat-button (click)="accordion?.openAll()">Expand All</button>
         <button mat-button (click)="accordion?.closeAll()">Collapse All</button>
     </div>
-    <mat-accordion class="headers-align" multi *ngFor="let eventData of getEventsData$ | async">
-        <etm-event-card [eventItem]="eventData"></etm-event-card>
+    <mat-accordion class="headers-align" multi>
+        <ng-container *ngFor="let eventData of getEventsData$ | async">
+            <etm-event-card [eventItem]="eventData"></etm-event-card>
+        </ng-container>
     </mat-accordion>
 </div>
 
