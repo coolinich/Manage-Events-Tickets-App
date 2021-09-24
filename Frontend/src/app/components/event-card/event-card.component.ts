@@ -11,7 +11,6 @@ export class EventCardComponent implements OnInit {
   @Input() eventItem!: EventModel;
   unsoldTicketsCounter: number = 0;
 
-  
   constructor() { }
 
   ngOnInit(): void {
