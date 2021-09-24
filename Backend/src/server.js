@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import EventsManager from './business-logic/events-manager.js';
 import InMemoryEventsRepository from './repositories-impl/inmemory-events-repository.js';
+import InFileEventsRepository from './repositories-impl/infile-events-repository.js';
 import { validateEventModel } from '../models/EventModel.js'
 import { validateTicketModel } from '../models/TicketModel.js';
 
@@ -16,8 +17,14 @@ class Server {
     }
 
     configureDependencies() {
-        const repository = new InMemoryEventsRepository();
+        // implementation with ImMemory repository       
+        // const repository = new InMemoryEventsRepository();
+        // implementation with File system
+        const repository = new InFileEventsRepository();
+        
         this.eventsManager = new EventsManager(repository);
+
+
     } 
 
     configureServer() {
