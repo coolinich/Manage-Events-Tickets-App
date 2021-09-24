@@ -1,0 +1,49 @@
+.basic-color {
+    color: rgba(1, 1, 1, .8);
+}
+
+.primary-color {
+    color: #1976d2;
+}
+
+.success-color {
+    color: #19d2aa;
+}
+
+mat-expansion-panel {
+    margin: 1rem 0;
+}
+
+.event-type__wrapper {
+    font-weight: 600;
+    color: rgba(1, 1, 1, .6);
+}
+
+.event-date__wrapper {
+    font-weight: 500;
+    margin-left: 1rem;
+}
+
+.event-location__wrapper {
+    margin-left: auto;
+}
+
+.all_stats__wrapper {
+    display: flex;
+    font-weight: 500;
+    margin-left: auto;
+}
+
+.tickets-status__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.stats__heading {
+    color: rgba(1, 1, 1, .6);
+}
+
+.stats-counter {
+    font-size: 1rem;
+}

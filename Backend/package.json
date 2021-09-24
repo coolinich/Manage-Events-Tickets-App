@@ -1,0 +1,26 @@
+{
+  "name": "tickets-be",
+  "version": "1.0.0",
+  "description": "REST API application: work with the list of events and stats of tickets",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "lint": "./node_modules/.bin/eslint "
+  },
+  "author": "Olha Kulinich",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.8",
+    "babel-jest": "^27.0.6",
+    "cors": "^2.8.5",
+    "eslint": "^7.31.0",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12"
+  }
+}

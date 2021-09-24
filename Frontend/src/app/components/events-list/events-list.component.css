@@ -1,0 +1,28 @@
+.action-buttons {
+    margin-bottom: 1rem;
+}
+
+.divider {
+    border-bottom: 1px solid rgba(1, 1, 1, .2);
+    margin-bottom: .5rem;
+}
+
+.text__wrapper {
+    text-align: center;
+    font-style: italic;
+}
+
+a,
+a:visited,
+a:hover {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #125699;
+}
+
+etm-event-card+etm-event-card {
+    margin-top: 1rem;
+}

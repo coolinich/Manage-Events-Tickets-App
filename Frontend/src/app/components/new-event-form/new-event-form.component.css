@@ -1,0 +1,44 @@
+.form__container {
+    max-width: 75%;
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.controls__wrapper {
+    display: flex;
+    margin-left: auto;
+}
+
+button+button, button+a {
+    margin-left: .5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .controls__wrapper {
+        margin-left: 0;
+        justify-content: space-between; 
+    }
+    button {
+        min-width: 30%;
+    }  
+    a {
+        font-size: .8rem;
+    }  
+}
+
+@media screen and (max-width: 576px) {
+    .controls__wrapper {
+        flex-direction: column;
+    }
+    button {
+        min-width: 100%;
+    }
+    button+button, button+a {
+        margin: 1rem 0;
+    }
+    a {
+        font-size: 1rem;
+    } 
+}

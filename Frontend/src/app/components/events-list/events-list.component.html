@@ -1,0 +1,17 @@
+<h1>List of events</h1>
+<div class="divider"></div>
+<div class="text__wrapper" *ngIf="!(getEventsData$ | async)?.length">
+    No events to show now, 
+    <a routerLink="/new-event">add new event</a>
+</div>
+<div *ngIf="(getEventsData$ | async)?.length">
+    <div class="action-buttons">
+        <button mat-button (click)="accordion?.openAll()">Expand All</button>
+        <button mat-button (click)="accordion?.closeAll()">Collapse All</button>
+    </div>
+    <mat-accordion class="headers-align" multi *ngFor="let eventData of getEventsData$ | async">
+        <etm-event-card [eventItem]="eventData"></etm-event-card>
+    </mat-accordion>
+</div>
+
+  

@@ -1,0 +1,47 @@
+<form [formGroup]="newEventForm" #newEventFormRef="ngForm" class="form__container"  novalidate>
+    <mat-form-field appearance="fill">
+        <mat-label>Event name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Event location</mat-label>
+        <input matInput formControlName="location">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Choose an event date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Event capacity</mat-label>
+        <input type="number" min="0" value="0" matInput formControlName="capacity">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Select</mat-label>
+        <mat-select formControlName="type">
+            <mat-option *ngFor='let eventType of eventTypes' [value]="eventType">{{ eventType | uppercase }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter desciption of event</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <div class="controls__wrapper">
+        <button
+          (click)="onSubmit(newEventFormRef)"
+          mat-stroked-button
+          color="primary"
+          [disabled]="newEventForm && newEventForm.pristine || newEventForm.invalid">
+          Create
+        </button>
+        <button
+          type="button"
+          (click)="onCancel(newEventFormRef)"
+          mat-stroked-button
+          color="warn">
+          Cancel
+        </button>
+        <a mat-button routerLink="/">Back to the events list</a>
+    </div>
+</form> 
