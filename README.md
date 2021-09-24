@@ -39,10 +39,10 @@ npm run start
 ```
 for a dev server.
 Server can be reached by endpoints:
-  - GET http://localhost:{custom_port}/events
-  - POST http://localhost:{custom_port}/events
-  - POST http://localhost:{custom_port}/events/:eventId/tickets
-  - PUT http://localhost:{custom_port}/events/:eventId/tickets/:ticketId
+  - GET http://localhost:3001/events
+  - POST http://localhost:3001/events
+  - POST http://localhost:3001/events/:eventId/tickets
+  - PUT http://localhost:3001/events/:eventId/tickets/:ticketId
 
 ### _Running unit tests_
 Run 

@@ -1,43 +1,40 @@
-<mat-expansion-panel [id]="eventItem?.id">
+<mat-expansion-panel>
     <mat-expansion-panel-header>
-      <mat-panel-title>
-        <span class="event-type__wrapper">{{ eventItem?.type | uppercase }}</span>
-      </mat-panel-title>
-      <mat-panel-description>
-            <span>{{ eventItem?.name }}</span>
-            <span class="event-date__wrapper">{{ eventItem?.date | date: 'd/MM/YYYY' }}</span>
-            <span class="event-location__wrapper">{{ eventItem?.location }} </span>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="all_stats__wrapper">
-        <span *ngIf="eventItem && eventItem.capacity && eventItem.tickets && eventItem.tickets.sold">
-            <span class="stats__heading">Unsold tickets: </span>
-            <span class="stats-counter basic-color">
-                {{ eventItem!.capacity - eventItem!.tickets!.sold }}
-            </span>
-        </span>
-        <div class="tickets-status__wrapper">
-            <span>
-                <span class="stats__heading">Sold tickets: </span>
-                <span class="stats-counter primary-color">
-                    {{ eventItem.tickets && eventItem.tickets["sold"] ? eventItem!.tickets["sold"] : 0 }}
-                </span>
-            </span>
-            <span>
-                <span class="stats__heading">Validated tickets: </span>
-                <span class="stats-counter success-color">
-                    {{ eventItem.tickets && eventItem.tickets["validated"] ? eventItem!.tickets["validated"] : 0 }}
-                </span>
+        <mat-panel-title>
+        <span class="title__wrapper">{{ eventItem?.name }}</span>
+        </mat-panel-title>
+        <mat-panel-description>
+        <div class="stats__wrapper">
+            <span class="stats__heading">Sold tickets: </span>
+            <span class="stats-counter primary-color">
+                {{ eventItem.tickets && eventItem.tickets["sold"] ? eventItem!.tickets["sold"] : 0 }}
             </span>
         </div>
-    </div>
+        <div class="stats__wrapper">
+            <span class="stats__heading">Validated tickets: </span>
+            <span class="stats-counter success-color">
+                {{ eventItem.tickets && eventItem.tickets["validated"] ? eventItem!.tickets["validated"] : 0 }}
+            </span>
+        </div>
+        <div class="unsold__wrapper" *ngIf="eventItem && eventItem.capacity && eventItem.tickets">
+            <span class="stats__heading">Unsold tickets: </span>
+            <span class="stats-counter basic-color">
+                {{ unsoldTicketsCounter }}
+            </span>
+        </div>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <span class="event-type__wrapper">{{ eventItem?.type | uppercase }}</span>
     <div class="full-date__wrapper">
         <span class="data-section__heading">Starts at </span>
         <span class="event-date__wrapper">{{ eventItem?.date | date: 'd/MM/YYYY hh:mm' }}</span>
     </div>
+    <div class="location__wrapper">
+        <span class="data-section__heading">Location: </span>
+        <span class="event-location__wrapper">{{ eventItem?.location }} </span>
+    </div>
     <div class="description__wrapper" *ngIf="eventItem && eventItem.description">
-        <span class="data-section__heading">Description</span>
+        <span class="data-section__heading">Description: </span>
         <span>{{ eventItem?.description }}</span>
     </div>
-
 </mat-expansion-panel>

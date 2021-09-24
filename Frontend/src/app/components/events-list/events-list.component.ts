@@ -21,5 +21,4 @@ export class EventsListComponent implements OnInit {
     this.getEventsData$ = this.eventsService.getAllEvents();
   }
 
-
 }

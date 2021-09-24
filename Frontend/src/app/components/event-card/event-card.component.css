@@ -1,22 +1,36 @@
+* {
+    --basic-color: rgba(1, 1, 1, .6);
+    --basic-color-light: rgba(1, 1, 1, .8);
+    --basic-color-blue-light: rgb(25, 117, 210);
+    --basic-color-blue: rgb(17, 85, 153);    
+    --basic-color-green-light: rgb(25, 210, 170);
+    --basic-color-green: rgb(31, 75, 65);
+}
+
 .basic-color {
-    color: rgba(1, 1, 1, .8);
+    color: var(--basic-color-light);
 }
 
 .primary-color {
-    color: #1976d2;
+    color: var(--basic-color-blue-light);
 }
 
 .success-color {
-    color: #19d2aa;
+    color: var(--basic-color-green-light);
 }
 
 mat-expansion-panel {
     margin: 1rem 0;
 }
 
+.title__wrapper {
+    color: var(--basic-color-blue);
+    font-weight: 500;
+}
+
 .event-type__wrapper {
     font-weight: 600;
-    color: rgba(1, 1, 1, .6);
+    color: var(--basic-color-green);
 }
 
 .event-date__wrapper {
@@ -28,22 +42,52 @@ mat-expansion-panel {
     margin-left: auto;
 }
 
-.all_stats__wrapper {
-    display: flex;
-    font-weight: 500;
-    margin-left: auto;
-}
-
-.tickets-status__wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-}
-
 .stats__heading {
-    color: rgba(1, 1, 1, .6);
+    color: var(--basic-color);
+    font-weight: 500;
 }
 
 .stats-counter {
     font-size: 1rem;
+    font-weight: 500;
+}
+
+.unsold__wrapper, .stats__wrapper {
+    margin-left: auto;
+}
+
+.stats__wrapper+.stats__wrapper {
+    margin-left: 1rem;
+}
+
+.data-section__heading {
+    font-weight: 600;
+    color: var(--basic-color);
+}
+
+@media screen and (max-width: 768px) {
+    mat-expansion-panel-header, mat-expansion-panel-header.mat-expanded {
+        flex-direction: column;
+        height: 6rem;
+        padding: 1rem 1.5rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mat-content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    mat-panel-title, mat-panel-description {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .unsold__wrapper, .stats__wrapper {
+        margin-left: 0;
+    }
+
 }
