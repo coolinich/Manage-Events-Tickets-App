@@ -13,17 +13,19 @@ import { EVENT_TYPES } from 'src/assets/constants';
   styleUrls: ['./new-event-form.component.css']
 })
 export class NewEventFormComponent implements OnInit {
+  eventTypes: string[] = EVENT_TYPES;
+  private readonly activeFormSubject$ = new Subject;
+
   newEventForm = this.fb.group({
     name: ['', Validators.required],
-    type: [''],
+    type: [this.eventTypes[0], Validators.required],
     location: ['', Validators.required],
     date: ['', Validators.required],
     description: [''], 
     capacity: ['']
   });
 
-  eventTypes: string[] = EVENT_TYPES;
-  private readonly activeFormSubject$ = new Subject;
+
   
   constructor(
     private fb: FormBuilder,
@@ -66,6 +68,18 @@ export class NewEventFormComponent implements OnInit {
 
   get eventDate() {
     return this.newEventForm.get('date');
+  }
+
+  get eventName() {
+    return this.newEventForm.get('name');
+  }
+
+  get eventLocation() {
+    return this.newEventForm.get('location');
+  }
+
+  get eventType() {
+    return this.newEventForm.get('type');
   }
 
 }

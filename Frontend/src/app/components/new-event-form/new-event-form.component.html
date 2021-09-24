@@ -2,26 +2,38 @@
     <mat-form-field appearance="fill">
         <mat-label>Event name</mat-label>
         <input matInput formControlName="name">
+        <mat-error *ngIf="eventName?.errors?.required">
+            This field is required
+        </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Event location</mat-label>
         <input matInput formControlName="location">
+        <mat-error *ngIf="eventLocation?.errors?.required">
+            This field is required
+        </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Choose an event date</mat-label>
         <input matInput [matDatepicker]="picker" formControlName="date">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="eventDate?.errors?.required">
+            This field is required
+        </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Event capacity</mat-label>
         <input type="number" min="0" value="0" matInput formControlName="capacity">
     </mat-form-field>
     <mat-form-field appearance="fill">
-        <mat-label>Select</mat-label>
+        <mat-label>Select event type</mat-label>
         <mat-select formControlName="type">
             <mat-option *ngFor='let eventType of eventTypes' [value]="eventType">{{ eventType | uppercase }}</mat-option>
         </mat-select>
+        <mat-error *ngIf="eventType?.errors?.required">
+            This field is required
+        </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Enter desciption of event</mat-label>
